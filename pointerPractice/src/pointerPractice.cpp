@@ -9,12 +9,14 @@
 #include <iostream>
 using namespace std;
 
-void exercise8p2(), exercise8p4(), exercise8p5();
+void exercise8p2(), exercise8p4(), exercise8p5(), exercise8p6(), exercise8p7();
 
 int main() {
 	//exercise8p2();
 	//exercise8p4();
-	exercise8p5();
+	//exercise8p5();
+	//exercise8p6();
+	exercise8p7();
 	return 0;
 }
 
@@ -60,4 +62,42 @@ void exercise8p5()
 
 	cout << "Input stored using pDogsAge at " << pDogsAge << endl;
 	cout << "Integer dogsAge = " << dogsAge << endl;
+}
+
+void exercise8p6()
+{
+	int age = 30;
+	double Pi = 3.14159;
+	char sayYes = 'y';
+	float floater = 1.123456;
+
+	int* pAge = &age;
+	double* pPi = &Pi;
+	char* pSayYes = &sayYes;
+	float* pFloater = &floater;
+
+	cout << "sizeof fundamental types -\n";
+	cout << "sizeof(int) = " << sizeof(int) << endl;
+	cout << "sizeof(double) = " << sizeof(double) << endl;
+	cout << "sizeof(char) = " << sizeof(char) << endl;
+	cout << "sizeof(float) = " << sizeof(float) << endl;
+
+	cout << "\nsizeof pointers to fundamental types -\n";
+	cout << "sizeof(pInt) = " << sizeof(pAge) << endl;
+	cout << "sizeof(pDouble) = " << sizeof(pPi) << endl;
+	cout << "sizeof(pChar) = " << sizeof(pSayYes) << endl;
+	cout << "sizeof(pFloat) = " << sizeof(pFloater) << endl;
+
+}
+
+void exercise8p7()
+{
+	int* pAge = new int;
+
+	cout << "Enter your dog's age :";
+	cin >> *pAge;
+
+	cout << "Age " << *pAge << " is stored at " << pAge << endl;
+
+	delete pAge;
 }
